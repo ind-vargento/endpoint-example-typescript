@@ -1,0 +1,22 @@
+name: Deploy int server
+
+on:
+  workflow_dispatch:
+jobs:
+
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Deploy to prod
+        uses: ind-vargento/pm2-deployment@main
+        with:
+          remote-path: "/home/vargento/deployment/endpoint-example-typescript"
+          host: ${{ secrets.SRV_HOST }}
+          username: ${{ secrets.SRV_USER }}
+          port: 22
+          build: false
+          password: ${{ secrets.SRV_PASSWORD }}
+          pm2-id: "endpoint-example"
