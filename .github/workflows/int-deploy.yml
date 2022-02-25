@@ -17,6 +17,6 @@ jobs:
           host: ${{ secrets.SRV_HOST }}
           username: ${{ secrets.SRV_USER }}
           port: 22
-          build: false
+          build: true
           password: ${{ secrets.SRV_PASSWORD }}
-          pm2-id: "endpoint-example"
+          pm2-id: "endpoint-example-typescript"
