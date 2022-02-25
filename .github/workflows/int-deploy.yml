@@ -16,7 +16,6 @@ jobs:
           remote-path: "/home/vargento/deployment/endpoint-example-typescript"
           host: ${{ secrets.SRV_HOST }}
           username: ${{ secrets.SRV_USER }}
-          key: ${{ secrets.SRV_KEY }}
           port: 22
           build: true
           password: ${{ secrets.SRV_PASSWORD }}
