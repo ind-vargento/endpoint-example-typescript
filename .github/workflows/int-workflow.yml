@@ -5,7 +5,12 @@ on:
             - feature/deployment
     workflow_dispatch:
 jobs:
-    deploy:
+
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: prueba
         uses: ndcmsl/workflows/.github/workflows/pm2-deployment.yml@feature/pm2-deployment
         with:
             remote-path: "/home/vargento/deployment/endpoint-example-typescript"
