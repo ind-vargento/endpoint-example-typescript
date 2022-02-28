@@ -9,9 +9,10 @@ jobs:
         uses: ndcmsl/workflows/.github/workflows/pm2-deployment.yml@feature/pm2-deployment
         with:
             remote-path: "/home/vargento/deployment/endpoint-example-typescript"
-            host: ${{ secrets.SRV_HOST }}
-            username: ${{ secrets.SRV_USER }}
             port: 22
             build: true
-            password: ${{ secrets.SRV_PASSWORD }}
             pm2-id: "endpoint-example-typescript"
+        secrets:
+            host: ${{ secrets.SRV_HOST }}
+            username: ${{ secrets.SRV_USER }}
+            password: ${{ secrets.SRV_PASSWORD }}
