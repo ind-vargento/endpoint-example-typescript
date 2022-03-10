@@ -1,0 +1,12 @@
+name: Start
+
+on:
+  watch:
+    types: [started]
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Hello World!"
